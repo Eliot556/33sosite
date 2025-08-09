@@ -1,0 +1,237 @@
+/* Section Contact Instagram */
+.contact-instagram {
+    background: var(--background);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(138, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(74, 0, 128, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 600px;
+}
+
+.contact-info h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 15px rgba(138, 0, 0, 0.5);
+}
+
+.contact-info > p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.instagram-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-card {
+    background: var(--card-background);
+    padding: 50px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(138, 0, 0, 0.3);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3), var(--glow);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(138, 0, 0, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.instagram-card:hover::before {
+    left: 100%;
+}
+
+.instagram-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(138, 0, 0, 0.05) 0%, rgba(74, 0, 128, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-card:hover::after {
+    opacity: 1;
+}
+
+.instagram-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), var(--glow);
+}
+
+.instagram-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4);
+    animation: instagramGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes instagramGlow {
+    from {
+        box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4);
+    }
+    to {
+        box-shadow: 0 15px 40px rgba(220, 39, 67, 0.6);
+    }
+}
+
+.instagram-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.instagram-card h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 10px rgba(138, 0, 0, 0.5);
+}
+
+.instagram-card p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3);
+}
+
+.btn-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(220, 39, 67, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-instagram i {
+    font-size: 1.2rem;
+}
+
+/* Styles pour le lien Instagram dans la section artistes */
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(220, 39, 67, 0.3);
+}
+
+.instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.instagram-link i {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-instagram {
+        padding: 80px 0;
+    }
+    
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+    
+    .instagram-card {
+        padding: 40px 30px;
+        margin: 0 20px;
+    }
+    
+    .instagram-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .instagram-icon i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .instagram-card {
+        padding: 30px 20px;
+    }
+    
+    .btn-instagram {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+} 

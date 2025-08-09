@@ -1,0 +1,197 @@
+/* ===== ARTISTES ===== */
+.artists {
+    background: var(--background);
+    position: relative;
+}
+
+.artists::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 90%, rgba(138, 0, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(74, 0, 128, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.artists-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.artist-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(138, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+.artist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(138, 0, 0, 0.1) 0%, rgba(74, 0, 128, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.artist-card:hover::before {
+    opacity: 1;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover), var(--glow);
+    border-color: var(--secondary-color);
+    animation: mysticalGlow 2s ease-in-out infinite;
+}
+
+.artist-image {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    background: var(--dark-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(138, 0, 0, 0.2);
+}
+
+.artist-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(138, 0, 0, 0.1) 0%, rgba(74, 0, 128, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.artist-card:hover .artist-image::after {
+    opacity: 1;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+    background: var(--dark-background);
+    padding: 15px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.artist-card:hover .artist-image img {
+    transform: scale(1.02);
+}
+
+.artist-info {
+    padding: 30px;
+}
+
+.artist-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(138, 0, 0, 0.5);
+}
+
+.artist-specialty {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.artist-bio {
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.artist-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.artist-social .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(220, 39, 67, 0.3);
+}
+
+.artist-social .instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.artist-social .instagram-link i {
+    font-size: 1.2rem;
+}
+
+/* ===== RESPONSIVE ARTISTES ===== */
+@media (max-width: 768px) {
+    .artists-grid {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .artist-card {
+        max-width: 100%;
+    }
+    
+    .artist-image {
+        height: 300px;
+    }
+    
+    .artist-image img {
+        padding: 10px;
+    }
+    
+    .artist-info {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .artist-image {
+        height: 250px;
+    }
+    
+    .artist-info {
+        padding: 20px;
+    }
+    
+    .artist-info h3 {
+        font-size: 1.3rem;
+    }
+} 
